@@ -18,7 +18,9 @@ warnings.filterwarnings(
 # 从 YAML 加载提示词模板，API 与 load_prompt("prompt.json") 一致
 from langchain_core.prompts import load_prompt
 
-template = load_prompt("prompt.yaml", encoding="utf-8")
+template = load_prompt(
+    r"案例与源码-2-LangChain框架\04-prompt\load_external\prompt.yaml", encoding="utf-8"
+)
 print(template.format(name="年轻人", what="滑稽"))
 #
 

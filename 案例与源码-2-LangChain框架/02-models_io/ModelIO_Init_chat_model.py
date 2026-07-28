@@ -40,3 +40,4 @@ messages = [
 ]
 response = model.invoke(messages)
 print(response.content)
+print(response.response_metadata)

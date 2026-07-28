@@ -35,4 +35,5 @@ messages = [
 
 response = chat_llm.invoke(messages)
 # 返回值是 AIMessage；若你要看 token 用量、finish_reason、模型名等，可继续查看 response.response_metadata。
+print(response.response_metadata)
 print(response.content)
