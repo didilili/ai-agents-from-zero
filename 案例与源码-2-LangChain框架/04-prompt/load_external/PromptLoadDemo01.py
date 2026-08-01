@@ -14,7 +14,9 @@ from langchain_core.prompts import load_prompt
 
 # 从当前目录（或指定路径）加载 prompt.json，得到与 PromptTemplate 用法相同的模板对象
 # encoding="utf-8" 保证中文等字符正常显示
-template = load_prompt("prompt.json", encoding="utf-8")
+template = load_prompt(
+    r"案例与源码-2-LangChain框架\04-prompt\load_external\prompt.json", encoding="utf-8"
+)
 
 # 用 .format() 填入占位符变量，得到最终字符串（与第 6 节 PromptTemplate.format 的使用方式一致）
 print(template.format(name="张三", what="搞笑的"))

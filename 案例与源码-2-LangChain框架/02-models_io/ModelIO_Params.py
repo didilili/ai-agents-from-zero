@@ -27,7 +27,7 @@ model = init_chat_model(
     model_provider="openai",
     api_key=os.getenv("deepseek-api"),
     base_url="https://api.deepseek.com",
-    temperature=0.7,  # 0～1，越高越随机；此处略高便于看到多次输出差异
+    temperature=0.1,  # 0～1，越高越随机；此处略高便于看到多次输出差异
     # max_tokens=256,  # 可选：限制单次回复长度
 )
 
@@ -47,7 +47,7 @@ print(type(model.invoke("写一句关于春天的词，14 字以内")))
 # 你可以把 temperature 改成 0、0.7、1.2 等再运行，对比回答是否更稳定、更多样。
 for i in range(3):
     print(f"--- 第 {i + 1} 次 ---")
-    print(model.invoke("写一句关于春天的词，14 字以内").content)
+    print(model.invoke("写一句关于春天的诗词，14 字以内").content)
 
 
 """

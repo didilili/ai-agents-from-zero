@@ -12,9 +12,11 @@
 
 # pip install langchain_community unstructured[docx] python-docx
 from langchain_community.document_loaders import UnstructuredWordDocumentLoader
+from pathlib import Path
 
+docs_path = Path(__file__).parent / "assets" / "alibaba-more.docx"
 docs = UnstructuredWordDocumentLoader(
-    file_path="assets/alibaba-more.docx",
+    file_path=docs_path,
     mode="single",  # single 整篇一个 Document；elements 按元素切分
 ).load()
 

@@ -36,6 +36,11 @@ def get_weather(loc: str) -> str:
     # Step 1. 构建请求 URL（OpenWeather 当前天气接口，见教程 5.2 API 文档）
     url = "https://api.openweathermap.org/data/2.5/weather"
 
+    api_key = os.getenv("OPENWEATHER_API_KEY")
+    print(
+        f"读取到的 API Key: [{api_key}]"
+    )  # 用中括号包起来，方便看出有没有多余的空格或引号
+
     # Step 2. 设置查询参数：q=城市名，appid 从环境变量读取（安全实践），units=metric 为摄氏度，lang=zh_cn 为中文描述
     params = {
         "q": loc,

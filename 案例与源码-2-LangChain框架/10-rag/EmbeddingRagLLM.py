@@ -24,6 +24,7 @@ from langchain_community.vectorstores import Redis
 from dotenv import load_dotenv
 
 load_dotenv()
+from pathlib import Path
 
 # 大模型：用于最终根据「检索到的上下文 + 用户问题」生成回答
 llm = init_chat_model(
@@ -55,8 +56,9 @@ embeddings = DashScopeEmbeddings(
     model="text-embedding-v3", dashscope_api_key=os.getenv("aliQwen-api")
 )
 
+docs_path = Path(__file__).parent / "alibaba-java.docx"
 # 1. 加载 docx（错误码文档）
-loader = Docx2txtLoader("alibaba-java.docx")
+loader = Docx2txtLoader(docs_path)
 documents = loader.load()
 
 # 2. 分割（此处用 CharacterTextSplitter 便于快速跑通；真实项目里更常见的通用首选是 RecursiveCharacterTextSplitter）

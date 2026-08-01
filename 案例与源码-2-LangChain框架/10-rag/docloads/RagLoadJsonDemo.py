@@ -12,9 +12,11 @@
 
 # pip install jq langchain_community
 from langchain_community.document_loaders import JSONLoader
+from pathlib import Path
 
+docs_path = Path(__file__).parent / "assets" / "sample.json"
 docs = JSONLoader(
-    file_path="assets/sample.json",
+    file_path=docs_path,
     jq_schema=".",  # 提取所有字段
     text_content=False,  # 是否按字符串处理内容
 ).load()

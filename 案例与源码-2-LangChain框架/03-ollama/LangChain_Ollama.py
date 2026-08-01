@@ -20,7 +20,7 @@ from langchain_ollama import ChatOllama
 # - reasoning：是否开启推理/思考模式（是否支持取决于具体模型）
 model = ChatOllama(
     base_url="http://localhost:11434",
-    model="qwen:4b",
+    model="qwen3.5:4b",
     reasoning=False,
 )
 
