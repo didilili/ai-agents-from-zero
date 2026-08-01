@@ -24,7 +24,10 @@ import os
 
 # pip install mcp httpx python-dotenv
 from dotenv import load_dotenv
-from mcp.server.fastmcp import FastMCP
+
+# from mcp.server.fastmcp import FastMCP
+from fastmcp import FastMCP
+
 import httpx
 
 load_dotenv()

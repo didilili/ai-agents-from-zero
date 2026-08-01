@@ -15,8 +15,10 @@
 """
 
 # pip install mcp
+# uv pip install fastmcp
 # pip install pywin32  # Windows 下部分功能需要
-from mcp.server.fastmcp import FastMCP
+# from mcp.server.fastmcp import FastMCP
+from fastmcp import FastMCP
 
 # 创建 MCP 实例，对应「MCP 服务器」角色
 mcp = FastMCP("Demo")

@@ -12,8 +12,9 @@
 
 # pip install langchain_community
 from langchain_community.document_loaders import TextLoader
+from pathlib import Path
 
-file_path = "assets/sample.txt"
+file_path = Path(__file__).parent / "assets" / "sample.json"
 encoding = "utf-8"
 
 # load() 为 BaseLoader 统一接口，返回 List[Document]

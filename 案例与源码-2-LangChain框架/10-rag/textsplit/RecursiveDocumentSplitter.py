@@ -14,9 +14,11 @@
 # pip install langchain-unstructured（部分环境加载本地文件还需 python-magic-bin）
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_unstructured import UnstructuredLoader
+from pathlib import Path
 
+txt_path = Path(__file__).parent / "rag.txt"
 # 1. 加载文档得到 Document 列表
-loader = UnstructuredLoader("rag.txt")
+loader = UnstructuredLoader(txt_path)
 documents = loader.load()
 
 # 2. 同一套分割参数：块 100 字符，重叠 30

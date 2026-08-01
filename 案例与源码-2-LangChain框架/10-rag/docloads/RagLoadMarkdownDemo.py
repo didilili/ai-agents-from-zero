@@ -11,9 +11,11 @@
 
 # pip install langchain_community unstructured[md]
 from langchain_community.document_loaders import UnstructuredMarkdownLoader
+from pathlib import Path
 
+docs_path = Path(__file__).parent / "assets" / "sample.md"
 docs = UnstructuredMarkdownLoader(
-    file_path="assets/sample.md",
+    file_path=docs_path,
     mode="elements",  # single 整篇；elements 按元素切分
 ).load()
 

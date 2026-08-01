@@ -12,7 +12,9 @@
 
 # ========== 1. 导入与环境 ==========
 import os
-from langchain_community.chat_models.tongyi import ChatTongyi
+from langchain_community.chat_models.tongyi import (
+    ChatTongyi,
+)  # 注意ChatTongyi 将逐步 从langchain_community包中遗弃
 from langchain_core.messages import HumanMessage
 
 from dotenv import load_dotenv
