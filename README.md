@@ -226,7 +226,7 @@
 
 ## ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/image?repos=didilili/ai-agents-from-zero&type=date&legend=top-left)]()
+[![Star History Chart](https://star-history.dera.page/svg?repos=didilili/ai-agents-from-zero&type=date&legend=top-left)](https://star-history.dera.page/#didilili/ai-agents-from-zero&type=date)
 
 ---
 
