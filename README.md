@@ -42,7 +42,7 @@
 </td>
 <td valign="middle">
 
-感谢 <a href="https://www.compshare.cn/coding-plan"><strong>优云智算</strong></a> 赞助本项目！优云智算是 UCloud 旗下 AI 云平台。主打包月、按次的高性价比国模 Agent Plan 套餐，低至 49 元/月起；同时提供官转稳定海外模型，支持接入 Claude Code、Codex 及 API 调用，面向企业提供高并发、7\*24 技术支持与自助开票。
+感谢 <a href="https://www.compshare.cn/coding-plan"><strong>优云智算</strong></a> 赞助本项目！优云智算是 UCloud 旗下 AI 云平台。主打包月、按次的高性价比国模 Agent Plan 套餐，低至 49 元/月起；同时提供官转稳定海外模型，支持接入 Claude Code、Codex 及 API 调用，面向企业提供高并发、7×24 技术支持与自助开票。
 
 🎁 通过 <a href="https://passport.compshare.cn/register?referral_code=KyLCDhVe3j5E9o1XBWmIku&ytag=GPU_YY_YX_git_ai-agents-from-zero"><strong>此链接</strong></a> 注册的用户，可得免费 5 元平台体验金。
 
