@@ -238,7 +238,7 @@ Want to discuss **AI coding, hands-on Agent / RAG practice, and interview experi
 | `README.en.md` | English | ✅ Done |
 | `CONTRIBUTING.en.md` | English | ✅ Done |
 | [`en/Glossary.md`](./en/Glossary.md) (full glossary) | English | ✅ Done |
-| `en/01-1-...` (Chapter 1-1) | English | 🚧 In progress |
+| [`en/01-1-llm-fundamentals-and-engineering-overview.md`](./en/01-1-llm-fundamentals-and-engineering-overview.md) (Chapter 1-1) | English | ✅ Done |
 | Chapters 1-2 … 33, interview bank, hands-on projects | English | ⏳ Planned |
 
 Translation is tracked per file. If you would like to help with a specific chapter, please open an issue or comment on an existing one to avoid duplicate work.
