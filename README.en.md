@@ -237,7 +237,7 @@ Want to discuss **AI coding, hands-on Agent / RAG practice, and interview experi
 | ---- | -------- | ------ |
 | `README.en.md` | English | ✅ Done |
 | `CONTRIBUTING.en.md` | English | ✅ Done |
-| `en/Glossary.md` (full glossary) | English | 🚧 In progress |
+| [`en/Glossary.md`](./en/Glossary.md) (full glossary) | English | ✅ Done |
 | `en/01-1-...` (Chapter 1-1) | English | 🚧 In progress |
 | Chapters 1-2 … 33, interview bank, hands-on projects | English | ⏳ Planned |
 
