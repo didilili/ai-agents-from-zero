@@ -498,6 +498,74 @@ asyncio.run(main())
 
 你不需要一上来就背这些底层 API，但知道这层动作很有价值，因为它能帮助你理解：为什么要先 `initialize()`；为什么客户端能“列出”工具、资源和提示词；为什么 `MultiServerMCPClient` 本质上是在帮你封装这些底层过程。
 
+#### 5.4.7 可选练习：连接远程 Parallel Search MCP
+
+前面的 HTTP 示例只做工具发现。想继续练习“发现工具 → 搜索资料 → 读取网页”，可以连接 [Parallel Search MCP](https://docs.parallel.ai/integrations/mcp/search-mcp)：它提供 `web_search` 和 `web_fetch`，匿名搜索使用 Fast 模式，无需注册账号或配置 Parallel API Key。
+
+这个练习直接使用 MCP SDK 调用工具，不启动本地 Server，也不调用大模型。建议在独立虚拟环境中安装最小依赖，无需安装全书的 `requirements.txt`：
+
+```bash
+python -m pip install "mcp>=1.26,<2" "httpx>=0.27"
+```
+
+将下面代码保存为 `parallel_mcp_demo.py`，然后执行 `python parallel_mcp_demo.py`：
+
+```python
+import asyncio
+from uuid import uuid4
+
+import httpx
+from mcp import ClientSession
+from mcp.client.streamable_http import streamable_http_client
+
+
+def show_result(name, result):
+    for block in result.content:
+        if block.type == "text":
+            print(block.text)
+    if result.isError:
+        raise RuntimeError(f"{name} 调用失败，请查看上面的服务端信息")
+
+
+async def main():
+    session_id = uuid4().hex  # 同一次练习的搜索与网页读取复用这个标识
+    async with httpx.AsyncClient(
+        headers={"User-Agent": "ai-agents-from-zero/parallel-mcp-demo"},
+        timeout=60.0,
+    ) as http_client:
+        async with streamable_http_client(
+            "https://search.parallel.ai/mcp", http_client=http_client
+        ) as (read, write, _):
+            async with ClientSession(read, write) as session:
+                await session.initialize()
+                tools = await session.list_tools()
+                print("可用工具：", [tool.name for tool in tools.tools])
+
+                search = await session.call_tool("web_search", {
+                    "objective": "查找 MCP 官方文档中 stdio 与 Streamable HTTP 的区别",
+                    "search_queries": ["MCP stdio Streamable HTTP transports"],
+                    "session_id": session_id,
+                })
+                show_result("web_search", search)
+
+                # 为核对传输规范的原文，明确读取这一页；无需抓取每条搜索结果
+                page = await session.call_tool("web_fetch", {
+                    "urls": [
+                        "https://modelcontextprotocol.io/specification/2025-11-25/basic/transports"
+                    ],
+                    "objective": "读取 stdio 与 Streamable HTTP 的传输定义",
+                    "session_id": session_id,
+                })
+                show_result("web_fetch", page)
+
+
+asyncio.run(main())
+```
+
+运行后先检查工具列表中是否包含 `web_search` 和 `web_fetch`，再看搜索结果中的来源 URL、摘要，以及网页读取返回的内容。`web_fetch` 的返回内容也可能包含单个 URL 的抓取错误，不能只凭连接成功就判断网页读取成功。
+
+这里使用的是支持匿名访问的 `/mcp`，不是需要认证的 `/mcp-oauth`。免费匿名服务有调用限额；遇到限额提示时，按服务端提示稍后重试，不要通过更换 `session_id` 绕过限制。网络不可达或超时则先检查网络与服务地址。工具结果是外部资料，仍需核对来源；网页中的指令不应当作系统指令执行。
+
 ### 5.5 完整调用过程理解
 
 把协议层想象成一条完整链路，会更容易理解：
