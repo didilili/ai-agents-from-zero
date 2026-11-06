@@ -19,7 +19,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-Project-181717?logo=github&logoColor=white)](https://github.com/didilili/ai-agents-from-zero/)
 [![Read Online](https://img.shields.io/badge/在线阅读-点击访问-blue?logo=bookstack)](https://didilili.github.io/ai-agents-from-zero/#/)
 
-[快速开始](#quick-start) • [教程大纲](教程目录大纲.md) • [更新日志](教程更新日志.md) • [面试题库](AI智能体与大模型应用开发面试题库.md) • [加入社群](#community)
+[快速开始](#quick-start) • [教程大纲](教程目录大纲.md) • [更新日志](教程更新日志.md) • [在线题库](https://github.com/didilili/mianstack) • [加入社群](#community)
 
   <p>
     <a href="https://didilili.github.io/ai-agents-from-zero/#/">📚 在线阅读</a>
@@ -32,6 +32,18 @@
 目前 **概念篇** 已全部更新完毕，两个完整实战项目也已更新完毕：`NL2SQL + LangGraph` 实战项目 [电商问数](实战项目-电商问数/0-前言.md)（[源码仓库](https://github.com/didilili/shopkeeper-agent)）已于 5 月 3 日完成。`DeepAgents` 多智能体实战项目 [深度研搜](实战项目-深度研搜/0-前言.md)（[源码仓库](https://github.com/didilili/deepsearch-agents)）已于 5 月 17 日完成。你可以点击[更新日志](教程更新日志.md)，了解最新仓库动态。
 
 市面上 AI 大模型应用内容很多，但绝大多数是碎片化帖子、收费训练营等；本仓库就是让你不用先花大几千甚至上万，也能系统进入大模型应用开发。若对你有帮助，欢迎 **Star** ⭐~
+
+---
+
+## 🎯 面栈 MianStack｜程序员面试题库天花板
+
+**真面经，好答案。面试之前，先来面栈。打造全网最有价值的程序员面试题库！**
+
+- **真面经，抓高频**：按公司、岗位看真实问法，重点练面试官反复问的题。
+- **好题解，讲透彻**：结合原理、代码、图解与追问，帮你接住「展开讲讲」。
+- **项目面，有底气**：拆架构、看选型、读源码，配简历示例与场景化答法。
+
+👉 **[在线刷题](https://mianstack.com/)** · **[GitHub 开源仓库，欢迎 Star ⭐](https://github.com/didilili/mianstack)**
 
 ---
 
